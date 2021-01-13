@@ -3,7 +3,7 @@ from typing import List
 
 class DatasetService:
     def __init__(self):
-        self.dataset = pd.read_csv('countries.csv')
+        self.dataset = pd.read_csv('countries.csv').fillna("")
 
     def pd_service(self, value:float) -> list:
         """
