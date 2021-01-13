@@ -7,14 +7,9 @@ from flask_swagger_ui import get_swaggerui_blueprint
 app = Flask(__name__)
 preprocessing = DatasetService()
 schema = CountrySchema(many=True)
-
-@app.route('/')
-def hello_world():
-    return 'API is running'
-
-
 SWAGGER_URL = '/api/docs'
 API_URL = '/static/swagger.yaml /'
+
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
@@ -23,6 +18,10 @@ swaggerui_blueprint = get_swaggerui_blueprint(
     }
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
+@app.route('/')
+def hello_world():
+    return 'API is running'
 
 
 @app.route('/country/<satisfaction_index>')
