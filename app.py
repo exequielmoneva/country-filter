@@ -17,7 +17,6 @@ def hello_world():
 def country_filter():
     value = float(request.json.get("value"))
     countries = preprocessing.pd_service(value)
-    sep = schema.dump(countries)
     return jsonify(schema.dump(countries))
 
 
