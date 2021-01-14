@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify, make_response, send_from_directory
+from flask import Flask, jsonify, make_response
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from schemas.schemas import CountrySchema
 from services.dataset_service import DatasetService
-from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
 preprocessing = DatasetService()

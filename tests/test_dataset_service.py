@@ -1,9 +1,6 @@
-import unittest
 import random
+import unittest
 
-import pytest
-
-from app import country_filter
 from services.dataset_service import DatasetService
 
 
