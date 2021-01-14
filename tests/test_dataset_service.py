@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
         assert result[-1]['Value'] > value
 
     def test_retrieve_empty_list(self):
-        value = 176076
+        value = 1000000
         result = DatasetService().pd_service(value)
 
         assert result is not None
