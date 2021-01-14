@@ -19,8 +19,9 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
+
 @app.route('/')
-def hello_world():
+def index():
     return 'API is running'
 
 
@@ -28,9 +29,9 @@ def hello_world():
 def country_filter(satisfaction_index):
     try:
         countries = preprocessing.pd_service(float(satisfaction_index))
-        return make_response(jsonify({"countries": schema.dump(countries)}),200)
+        return make_response(jsonify({"countries": schema.dump(countries)}), 200)
     except ValueError as e:
-        return make_response(jsonify({'error': str(e)}),400)
+        return make_response(jsonify({'error': str(e)}), 400)
 
 
 if __name__ == '__main__':
