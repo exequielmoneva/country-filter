@@ -10,7 +10,7 @@ info:
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 
 paths:
-  /country/{satisfaction_index}:
+  /country:
     get:
       tags:
       - "country"
@@ -18,7 +18,7 @@ paths:
       description: "Returns a list of countries"
       parameters:
       - name: "satisfaction_index"
-        in: "path"
+        in: "query"
         description: "life satisfaction index"
         required: true
         schema:
