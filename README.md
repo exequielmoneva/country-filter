@@ -38,7 +38,7 @@ API is running
 ## GET filtered countries
 
 ```
-http://localhost:5000/country/satisfaction_index
+http://localhost:5000/country?satisfaction_index=100000
 ```
 Example response with satisfaction_index 100000:
 ```json
